@@ -18,8 +18,8 @@ protocol LocalDataLoadable {
 class CarlistService: LocalDataLoadable {
     
     struct Constants {
-        /// 2 seconds delay
-        static let delayInNanoseconds = UInt64(2 * 1_000_000_000)
+        /// 0 seconds delay
+        static let delayInNanoseconds = UInt64(0 * 1_000_000_000)
     }
     
     static let shared = CarlistService()
