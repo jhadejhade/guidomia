@@ -16,7 +16,7 @@ struct CarListItemView: View {
     var body: some View {
         VStack {
             HStack(alignment: .top) {
-                Image(.tacoma)
+                Image(car.assetName)
                     .resizable()
                     .aspectRatio(3/2, contentMode: .fit)
                     .frame(width: 100)

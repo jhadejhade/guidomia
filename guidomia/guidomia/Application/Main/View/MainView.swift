@@ -34,4 +34,5 @@ struct MainView<T: MainViewViewModelProtocol & Filterable>: View {
 #Preview {
     let viewModel = MainViewViewModel()
     return MainView(viewModel: viewModel)
+        .environmentObject(ThemeManager())
 }

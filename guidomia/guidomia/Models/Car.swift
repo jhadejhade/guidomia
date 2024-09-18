@@ -9,7 +9,7 @@ import Foundation
 
 struct Car: Codable, Identifiable, Equatable {
     var id: String {
-        make + model
+        String(format: "%@ %@", make, model)
     }
     
     let consList: [String]
@@ -19,4 +19,9 @@ struct Car: Codable, Identifiable, Equatable {
     let model: String
     let prosList: [String]
     let rating: Double
+    
+    var assetName: String {
+        print(id.replacingOccurrences(of: " ", with: "_"))
+        return id.replacingOccurrences(of: " ", with: "_")
+    }
 }
