@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FilterView<T: Filterable>: View {
     
+    @EnvironmentObject var themeManager: ThemeManager
     @ObservedObject var viewModel: T
     
     var body: some View {
@@ -19,7 +20,7 @@ struct FilterView<T: Filterable>: View {
                     .bold()
                     .foregroundStyle(.white)
                     .padding([.horizontal, .top])
-                
+                    
                 Spacer()
             }
             
@@ -27,7 +28,7 @@ struct FilterView<T: Filterable>: View {
             
             DropdownView(filterSelection: $viewModel.carModel, filters: viewModel.modelFilters, placeholder: "Any model")
         }
-        .background(Color.gray)
+        .background(themeManager.currentTheme.backgroundColor)
         .clipShape(RoundedRectangle(cornerRadius: 10))
         .padding()
     }
@@ -35,4 +36,5 @@ struct FilterView<T: Filterable>: View {
 
 #Preview {
     FilterView(viewModel: MainViewViewModel())
+        .environmentObject(ThemeManager())
 }

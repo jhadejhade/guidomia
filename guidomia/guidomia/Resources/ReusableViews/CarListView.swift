@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct CarListView: View {
+    @EnvironmentObject var themeManager: ThemeManager
+    @State private var expandedCarId: String?
     
     var cars: [Car]
-    @State private var expandedCarId: String?
     
     var body: some View {
         VStack {
@@ -18,11 +19,11 @@ struct CarListView: View {
                 VStack {
                     CarListItemView(car: car, isExpanded: expandedCarId == car.id)
                         .padding(.vertical)
-                        .background(Color.gray)
+                        .background(themeManager.currentTheme.secondaryBackgroundColor)
                     
                     Rectangle()
-                        .frame(height: 5)
-                        .foregroundColor(.gray)
+                        .frame(height: themeManager.currentTheme.lineHeight)
+                        .foregroundColor(themeManager.currentTheme.primaryColor)
                         .padding(.vertical, 4)
                 }
                 .onTapGesture {
@@ -60,5 +61,6 @@ struct CarListView: View {
                                 prosList: [],
                                 rating: 4)]
     return CarListView(cars: cars)
+        .environmentObject(ThemeManager())
     
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CarListItemView: View {
+    @EnvironmentObject var themeManager: ThemeManager
     
     var car: Car
     var isExpanded: Bool
@@ -24,10 +25,12 @@ struct CarListItemView: View {
                 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(String(format: "%@ %@", car.make, car.model))
+                        .foregroundStyle(themeManager.currentTheme.primaryTextColor)
                         .font(.headline)
                         .lineLimit(nil)
                     
                     Text(String(format: "Price: %@", 2000.abbreviated))
+                        .foregroundStyle(themeManager.currentTheme.primaryTextColor)
                         .font(.subheadline)
                     
                     StarRatingView(carRating: car.rating)
@@ -41,6 +44,7 @@ struct CarListItemView: View {
                 HStack {
                     VStack(alignment: .leading, content: {
                         Text("Pros:")
+                            .foregroundStyle(themeManager.currentTheme.primaryTextColor)
                             .font(.headline)
                         
                         VStack {
@@ -48,11 +52,14 @@ struct CarListItemView: View {
                             ForEach(prosList, id: \.self) { pros in
                                 HStack {
                                     Image(systemName: "circle.fill")
+                                        .foregroundStyle(themeManager.currentTheme.primaryColor)
                                     
                                     Text(pros)
+                                        .foregroundStyle(themeManager.currentTheme.secondaryTextColor)
                                     
                                     Spacer()
                                 }
+                                .padding(.vertical, 4)
                             }
                         }
                     })
@@ -72,11 +79,14 @@ struct CarListItemView: View {
                             ForEach(consList, id: \.self) { cons in
                                 HStack {
                                     Image(systemName: "circle.fill")
+                                        .foregroundStyle(themeManager.currentTheme.primaryColor)
                                     
                                     Text(cons)
+                                        .foregroundStyle(themeManager.currentTheme.secondaryTextColor)
                                     
                                     Spacer()
                                 }
+                                .padding(.vertical, 4)
                             }
                         }
                     })
@@ -99,4 +109,5 @@ struct CarListItemView: View {
                   prosList: ["4 wheel drive", "Disc Brake", "Disc Brake"],
                   rating: 4.5)
     return CarListItemView(car: car, isExpanded: true)
+        .environmentObject(ThemeManager())
 }
