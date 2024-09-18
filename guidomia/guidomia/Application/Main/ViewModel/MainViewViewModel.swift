@@ -27,6 +27,7 @@ class MainViewViewModel: MainViewViewModelProtocol {
         self.carService = carService
     }
     
+    @MainActor
     func getList() {
         Task {
             cars = try await carService.loadFile(forResource: "car_list", ofType: .json)

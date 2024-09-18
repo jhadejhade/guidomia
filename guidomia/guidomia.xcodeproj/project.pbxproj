@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		076B40672C9AAF2A005C1920 /* CarListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076B40662C9AAF2A005C1920 /* CarListItemView.swift */; };
+		076B406A2C9AB01E005C1920 /* Numeric+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076B40692C9AB017005C1920 /* Numeric+Extension.swift */; };
 		07E967FF2C9A95B7007AF2FA /* GuidomiaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E967FE2C9A95B7007AF2FA /* GuidomiaApp.swift */; };
 		07E968012C9A95B7007AF2FA /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E968002C9A95B7007AF2FA /* MainView.swift */; };
 		07E968032C9A95B9007AF2FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07E968022C9A95B9007AF2FA /* Assets.xcassets */; };
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		076B40662C9AAF2A005C1920 /* CarListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListItemView.swift; sourceTree = "<group>"; };
+		076B40692C9AB017005C1920 /* Numeric+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numeric+Extension.swift"; sourceTree = "<group>"; };
 		07E967FB2C9A95B7007AF2FA /* Guidomia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guidomia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E967FE2C9A95B7007AF2FA /* GuidomiaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidomiaApp.swift; sourceTree = "<group>"; };
 		07E968002C9A95B7007AF2FA /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -88,6 +92,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		076B40682C9AB010005C1920 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				076B40692C9AB017005C1920 /* Numeric+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		07E967F22C9A95B7007AF2FA = {
 			isa = PBXGroup;
 			children = (
@@ -163,7 +175,8 @@
 		07E9682C2C9A96CF007AF2FA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				07E9683E2C9AA044007AF2FA /* ResuableViews */,
+				076B40682C9AB010005C1920 /* Extensions */,
+				07E9683E2C9AA044007AF2FA /* ReusableViews */,
 				07E968362C9A9CF3007AF2FA /* Errors */,
 				07E968312C9A9852007AF2FA /* Services */,
 				07E9682E2C9A9744007AF2FA /* Json */,
@@ -223,14 +236,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		07E9683E2C9AA044007AF2FA /* ResuableViews */ = {
+		07E9683E2C9AA044007AF2FA /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
 				07E9683F2C9AA05C007AF2FA /* HeaderView.swift */,
 				07E968412C9AA192007AF2FA /* FilterView.swift */,
 				07E968452C9AABD1007AF2FA /* CarListView.swift */,
+				076B40662C9AAF2A005C1920 /* CarListItemView.swift */,
 			);
-			path = ResuableViews;
+			path = ReusableViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,7 +326,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 07E967F62C9A95B7007AF2FA /* Build configuration list for PBXProject "Guidomia" */;
+			buildConfigurationList = 07E967F62C9A95B7007AF2FA /* Build configuration list for PBXProject "guidomia" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -365,7 +379,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				07E968422C9AA192007AF2FA /* FilterView.swift in Sources */,
+				076B406A2C9AB01E005C1920 /* Numeric+Extension.swift in Sources */,
 				07E968012C9A95B7007AF2FA /* MainView.swift in Sources */,
+				076B40672C9AAF2A005C1920 /* CarListItemView.swift in Sources */,
 				07E968442C9AA9C3007AF2FA /* Car.swift in Sources */,
 				07E968402C9AA05C007AF2FA /* HeaderView.swift in Sources */,
 				07E968352C9A9A15007AF2FA /* CarListService.swift in Sources */,
@@ -684,7 +700,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		07E967F62C9A95B7007AF2FA /* Build configuration list for PBXProject "Guidomia" */ = {
+		07E967F62C9A95B7007AF2FA /* Build configuration list for PBXProject "guidomia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				07E9681E2C9A95B9007AF2FA /* Debug */,
