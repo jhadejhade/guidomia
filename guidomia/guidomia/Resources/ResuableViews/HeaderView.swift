@@ -14,11 +14,23 @@ struct HeaderView: View {
     var image: ImageResource
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .bottomLeading) {
             Image(image)
                 .resizable()
                 .scaledToFit()
-                .ignoresSafeArea()
+            
+            VStack {
+                Text(title)
+                    .font(.title)
+                    .bold()
+                    .foregroundStyle(.white)
+                
+                Text(description)
+                    .font(.title2)
+                    .bold()
+                    .foregroundStyle(.white)
+            }
+            .padding()
         }
     }
 }

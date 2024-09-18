@@ -24,7 +24,6 @@ struct FilterView: View {
                 Spacer()
             }
             
-            
             TextField("Any make", text: $carMake)
                 .textFieldStyle(.roundedBorder)
                 .padding([.horizontal, .bottom])
@@ -34,6 +33,7 @@ struct FilterView: View {
                 .padding([.horizontal, .bottom])
         }
         .background(Color.gray)
+        .clipShape(RoundedRectangle(cornerRadius: 10))
         .padding()
     }
 }

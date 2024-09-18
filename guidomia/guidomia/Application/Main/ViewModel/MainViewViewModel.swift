@@ -8,10 +8,14 @@
 import Foundation
 
 protocol MainViewViewModelProtocol: ObservableObject {
-    
+    var carMake: String { get set }
+    var carModel: String { get set }
 }
 
 class MainViewViewModel: MainViewViewModelProtocol {
+    
+    @Published var carMake: String = ""
+    @Published var carModel: String = ""
     
     private var carService: LocalDataLoadable
     

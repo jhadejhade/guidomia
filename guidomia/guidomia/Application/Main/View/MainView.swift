@@ -12,11 +12,15 @@ struct MainView<T: MainViewViewModelProtocol>: View {
     @StateObject var viewModel: T
     
     var body: some View {
-        VStack {
-            HeaderView(title: "Tacoma", description: "Get your's now", image: .tacoma)
+        NavigationView {
+            VStack {
+                HeaderView(title: "Tacoma 2021", description: "Get your's now", image: .tacoma)
+                
+                FilterView(carMake: $viewModel.carMake, carModel: $viewModel.carModel)
+                
+                Spacer()
+            }
         }
-        
-        Spacer()
     }
 }
 
