@@ -44,7 +44,8 @@ struct CarListItemView: View {
                             .font(.headline)
                         
                         VStack {
-                            ForEach(car.prosList, id: \.self) { pros in
+                            let prosList = car.prosList.filter({ $0 != "" })
+                            ForEach(prosList, id: \.self) { pros in
                                 HStack {
                                     Image(systemName: "circle.fill")
                                     
@@ -67,7 +68,8 @@ struct CarListItemView: View {
                             .font(.headline)
                         
                         VStack {
-                            ForEach(car.consList, id: \.self) { cons in
+                            let consList = car.consList.filter({ $0 != "" })
+                            ForEach(consList, id: \.self) { cons in
                                 HStack {
                                     Image(systemName: "circle.fill")
                                     
