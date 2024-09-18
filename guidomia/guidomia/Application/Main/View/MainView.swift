@@ -16,9 +16,13 @@ struct MainView<T: MainViewViewModelProtocol>: View {
             VStack {
                 HeaderView(title: "Tacoma 2021", description: "Get your's now", image: .tacoma)
                 
-                FilterView(carMake: $viewModel.carMake, carModel: $viewModel.carModel)
-                
-                Spacer()
+                ScrollView {
+                    VStack {
+                        FilterView(carMake: $viewModel.carMake, carModel: $viewModel.carModel)
+                        
+                        CarListView(cars: viewModel.cars)
+                    }
+                }
             }
             .onAppear {
                 viewModel.getList()

@@ -12,42 +12,31 @@ struct CarListItemView: View {
     var car: Car
     
     var body: some View {
-        HStack {
+        HStack(alignment: .top) {
             Image(.tacoma)
                 .resizable()
+                .aspectRatio(3/2, contentMode: .fit)
+                .frame(width: 100)
+                .clipped()
+                .padding(.leading)
             
             VStack(alignment: .leading, spacing: 4) {
-                HStack {
-                    Text(String(format: "%@ %@", car.make, car.model))
-                        .font(.title)
-                        .lineLimit(1)
-                }
+                Text(String(format: "%@ %@", car.make, car.model))
+                    .font(.headline)
+                    .lineLimit(nil)  // Allow text to wrap into multiple lines
                 
                 Text(String(format: "Price: %@", 2000.abbreviated))
-                    .font(.title)
+                    .font(.subheadline)
                 
-                HStack(spacing: 2) {
-                    let carRating = car.rating
-                    
-                    ForEach(0..<Int(carRating), id: \.self) { _ in
-                        Image(systemName: "star.fill")
-                            .foregroundColor(.yellow)
-                    }
-                    
-                    if carRating.truncatingRemainder(dividingBy: 1) != 0 {
-                        Image(systemName: "star.leadinghalf.fill")
-                            .foregroundColor(.yellow)
-                    }
-                    
-                    ForEach(0..<(5 - Int(ceil(carRating))), id: \.self) { _ in
-                        Image(systemName: "star")
-                            .foregroundColor(.yellow)
-                    }
-                }
+                StarRatingView(carRating: car.rating)
             }
+            .padding(.leading, 8) 
+            
+            Spacer()
         }
     }
 }
+
 
 #Preview {
     let car = Car(consList: [],
@@ -56,6 +45,6 @@ struct CarListItemView: View {
                   marketPrice: 2000,
                   model: "Land Cruiser",
                   prosList: [],
-                  rating: 4)
+                  rating: 4.5)
     return CarListItemView(car: car)
 }

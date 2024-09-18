@@ -18,5 +18,5 @@ struct Car: Codable, Identifiable {
     let marketPrice: Double
     let model: String
     let prosList: [String]
-    let rating: Int
+    let rating: Double
 }
