@@ -20,6 +20,9 @@ struct MainView<T: MainViewViewModelProtocol>: View {
                 
                 Spacer()
             }
+            .onAppear {
+                viewModel.getList()
+            }
         }
     }
 }
