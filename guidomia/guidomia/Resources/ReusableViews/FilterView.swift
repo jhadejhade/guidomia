@@ -7,10 +7,9 @@
 
 import SwiftUI
 
-struct FilterView: View {
+struct FilterView<T: Filterable>: View {
     
-    @Binding var carMake: String
-    @Binding var carModel: String
+    @ObservedObject var viewModel: T
     
     var body: some View {
         VStack {
@@ -24,13 +23,9 @@ struct FilterView: View {
                 Spacer()
             }
             
-            TextField("Any make", text: $carMake)
-                .textFieldStyle(.roundedBorder)
-                .padding([.horizontal, .bottom])
+            DropdownView(filterSelection: $viewModel.carMake, filters: viewModel.makeFilters, placeholder: "Any make")
             
-            TextField("Any model", text: $carModel)
-                .textFieldStyle(.roundedBorder)
-                .padding([.horizontal, .bottom])
+            DropdownView(filterSelection: $viewModel.carModel, filters: viewModel.modelFilters, placeholder: "Any model")
         }
         .background(Color.gray)
         .clipShape(RoundedRectangle(cornerRadius: 10))
@@ -39,5 +34,5 @@ struct FilterView: View {
 }
 
 #Preview {
-    FilterView(carMake: .constant(""), carModel: .constant(""))
+    FilterView(viewModel: MainViewViewModel())
 }

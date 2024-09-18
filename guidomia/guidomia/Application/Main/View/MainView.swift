@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainView<T: MainViewViewModelProtocol>: View {
+struct MainView<T: MainViewViewModelProtocol & Filterable>: View {
     
     @StateObject var viewModel: T
     
@@ -18,7 +18,7 @@ struct MainView<T: MainViewViewModelProtocol>: View {
                 
                 ScrollView {
                     VStack {
-                        FilterView(carMake: $viewModel.carMake, carModel: $viewModel.carModel)
+                        FilterView(viewModel: viewModel)
                         
                         CarListView(cars: viewModel.cars)
                     }

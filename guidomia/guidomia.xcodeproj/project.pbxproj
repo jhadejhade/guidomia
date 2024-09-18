@@ -25,6 +25,7 @@
 		07E968442C9AA9C3007AF2FA /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E968432C9AA9C3007AF2FA /* Car.swift */; };
 		07E968462C9AABD1007AF2FA /* CarListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E968452C9AABD1007AF2FA /* CarListView.swift */; };
 		07E968482C9AB671007AF2FA /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E968472C9AB671007AF2FA /* StarRatingView.swift */; };
+		07E9684A2C9AD7B4007AF2FA /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E968492C9AD7B4007AF2FA /* DropdownView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		07E968432C9AA9C3007AF2FA /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		07E968452C9AABD1007AF2FA /* CarListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListView.swift; sourceTree = "<group>"; };
 		07E968472C9AB671007AF2FA /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
+		07E968492C9AD7B4007AF2FA /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +248,7 @@
 				07E968452C9AABD1007AF2FA /* CarListView.swift */,
 				076B40662C9AAF2A005C1920 /* CarListItemView.swift */,
 				07E968472C9AB671007AF2FA /* StarRatingView.swift */,
+				07E968492C9AD7B4007AF2FA /* DropdownView.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				076B40672C9AAF2A005C1920 /* CarListItemView.swift in Sources */,
 				07E968442C9AA9C3007AF2FA /* Car.swift in Sources */,
 				07E968482C9AB671007AF2FA /* StarRatingView.swift in Sources */,
+				07E9684A2C9AD7B4007AF2FA /* DropdownView.swift in Sources */,
 				07E968402C9AA05C007AF2FA /* HeaderView.swift in Sources */,
 				07E968352C9A9A15007AF2FA /* CarListService.swift in Sources */,
 				07E968382C9A9D08007AF2FA /* LocalDataError.swift in Sources */,
