@@ -11,7 +11,8 @@ import SwiftUI
 struct GuidomiaApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let viewModel = MainViewViewModel()
+            MainView(viewModel: viewModel)
         }
     }
 }
