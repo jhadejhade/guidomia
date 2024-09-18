@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Car: Codable, Identifiable {
+struct Car: Codable, Identifiable, Equatable {
     var id: String {
         make + model
     }

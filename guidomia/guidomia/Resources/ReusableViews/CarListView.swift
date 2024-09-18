@@ -10,16 +10,38 @@ import SwiftUI
 struct CarListView: View {
     
     var cars: [Car]
+    @State private var expandedCarId: String?
     
     var body: some View {
         VStack {
             ForEach(cars) { car in
-                CarListItemView(car: car)
+                VStack {
+                    CarListItemView(car: car, isExpanded: expandedCarId == car.id)
+                        .padding(.vertical)
+                        .background(Color.gray)
+                    
+                    Rectangle()
+                        .frame(height: 5)
+                        .foregroundColor(.gray)
+                        .padding(.vertical, 4)
+                }
+                .onTapGesture {
+                    withAnimation {
+                        if expandedCarId == car.id {
+                            expandedCarId = nil
+                        } else {
+                            expandedCarId = car.id
+                        }
+                    }
+                }
+            }
+        }
+        .onChange(of: cars) { oldCars, newCars in
+            if let firstCar = newCars.first, expandedCarId == nil {
+                expandedCarId = firstCar.id
             }
         }
     }
-    
-    
 }
 
 #Preview {
